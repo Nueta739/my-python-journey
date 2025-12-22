@@ -4,7 +4,7 @@
 A collection of Python programs I wrote while learning the fundamentals. 
 
 ## Contents
--To be added 
+- Rock paper scissors 
 
 
 ## Goals
