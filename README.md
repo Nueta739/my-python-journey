@@ -4,7 +4,8 @@
 A collection of Python programs I wrote while learning the fundamentals. 
 
 ## Contents
-- Rock paper scissors 
+- Rock paper scissors
+- Simple calculator
 
 
 ## Goals
