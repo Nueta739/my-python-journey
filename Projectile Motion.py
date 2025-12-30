@@ -1,4 +1,6 @@
 import math
+import numpy as np
+import matplotlib.pyplot as plt
 
 def projectile_motion(velocity,angle,height = 0, g = 9.81 ):
     angle = math.radians(angle)
@@ -11,10 +13,34 @@ def projectile_motion(velocity,angle,height = 0, g = 9.81 ):
         maaximum_height += height
 #To be finished
 
-    print(f"Time of flight: {flight_time}s")
-    print(f"Range of flight: {range_of_flight}m/s")
-    print(f"Maximum height: {maximum_height}m")
+    stats_text = (
+        f"Max height: {maximum_height:.2f}\n"
+        f"Range: {range_of_flight:.2f}\n"
+        f"Flight time: {flight_time:.2f}\n"
+                  )
 
 
+
+
+    def x(t):
+        return (velocity * math.sin(angle))*t
+    def y(t):
+        return (velocity * math.cos(angle))*t - 1/2*g*(t**2)
+
+    t=np.linspace(0,flight_time,400)
+
+    plt.plot(x(t),y(t))
+    plt.xlabel('Horizontal displacement')
+    plt.ylabel('Vertical displacement')
+    plt.title('Projectile Motion')
+    plt.grid(True)
+    plt.ylim(bottom = 0,top = maximum_height + 1)
+    plt.xlim(left = 0)
+    plt.text(0,maximum_height + 1,stats_text)
+    plt.show()
+
+
+projectile_motion(10,45)
 
 #to implement height arguement
+
